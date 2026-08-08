@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prediction - Weather Forecasting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body data-page="prediction">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="/dashboard">Weather Forecast</a>
+        <div>
+            <a class="btn btn-outline-light me-2" href="/prediction">Predict</a>
+            <a class="btn btn-outline-light me-2" href="/weather">Weather Data</a>
+            <a class="btn btn-outline-light me-2" href="/agent"><i class="bi bi-robot me-1"></i>AI Agent</a>
+            <a class="btn btn-outline-light me-2" href="/history">History</a>
+            <a class="btn btn-outline-light me-2" href="/performance">Performance</a>
+            <a class="btn btn-light" href="/logout">Logout</a>
+        </div>
+    </div>
+</nav>
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title">Enter Weather Parameters</h4>
+                    <form id="predictionForm">
+                        <div class="mb-3">
+                            <label class="form-label">Temperature (°C)</label>
+                            <input type="number" step="0.1" class="form-control" id="temperature" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Humidity (%)</label>
+                            <input type="number" step="0.1" class="form-control" id="humidity" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Pressure (hPa)</label>
+                            <input type="number" step="0.1" class="form-control" id="pressure" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Wind Speed (km/h)</label>
+                            <input type="number" step="0.1" class="form-control" id="windSpeed" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cloud Cover (%)</label>
+                            <input type="number" step="0.1" class="form-control" id="cloudCover" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Precipitation (mm)</label>
+                            <input type="number" step="0.1" class="form-control" id="precipitation" required />
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="submitPrediction()">Predict Weather</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title">Prediction Result</h4>
+                    <div id="predictionResults">
+                        <p><strong>Decision Tree Result:</strong> <span id="decisionResult">--</span></p>
+                        <p><strong>Regression Result:</strong> <span id="regressionResult">--</span></p>
+                        <p><strong>Explanation:</strong></p>
+                        <p id="predictionExplanation">Enter values to receive a forecast explanation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>
