@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: weather-forecasting
+    env: docker
+    region: oregon
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: h2
